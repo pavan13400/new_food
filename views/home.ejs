@@ -1,0 +1,63 @@
+<%- include('partials/header') %>
+<header>
+    <div class="heading">VIVANDA</div>
+  <nav class="nav-bar">
+    <a href="/home" id="homeBtn">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact Us</a>
+  <div>
+    <%  if(locals.username){  %>
+      <a href="/profile">Profile</a>
+      <% } else {%>
+        <a class="register" href="/register" role="button">Register</a>
+        <a class="login" href="/login" role="button">Login</a>
+        <%} %>
+  </div>
+  </nav>
+  </header>
+  <body>
+  <!-- <%- include('login') %> -->
+   <div class="hero">
+    <div id="donateSection" style="display:none;">
+      <a href="donate.ejs">Donate</a>
+      <p>Have some surplus food? Click here to donate.</p>
+    </div>
+  
+    <div id="orderSection" style="display:none;">
+      <a href="order.ejs">Order</a>
+      <p>Too busy to go buy essentials? Click here to buy groceries, food or medicine.</p>
+    </div>
+  
+    <div id="informSection" style="display:none;">
+      <a href="inform.ejs">Inform</a>
+      <p>Found people who need help? Click here to inform others.</p>
+    </div>
+    <div id="quote">"Food is not just a necessity; it is a gift that should never be wasted."</div>
+   </div>
+   <main>
+  <img src="../images/images.jpg" height="300" width="300"><img> 
+</main>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBXaKa1e5dP1xbbUSi3znkFcXeJsnJ6BSQ",
+    authDomain: "vivanda-86597.firebaseapp.com",
+    projectId: "vivanda-86597",
+    storageBucket: "vivanda-86597.firebasestorage.app",
+    messagingSenderId: "396118868879",
+    appId: "1:396118868879:web:60cd5e4bb241f620c2c1fa",
+    measurementId: "G-XD9YW57XLK"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
